@@ -1,11 +1,11 @@
 import "./App.css";
 
-import StarRating from "./components/Star-rating";
+import LightDarkMode from "./components/use-darkmode";
 
 function App() {
   return (
     <div className="App">
-      <StarRating />
+      <LightDarkMode />
     </div>
   );
 }
