@@ -1,23 +1,11 @@
-import { useEffect, useState } from "react";
+import useLocalStorage from "./useLocalStorage";
 
 const LightDarkMode = () => {
-  const [theme, setTheme] = useState(() => {
-    const themeLocalStorage = localStorage.getItem("theme");
-    return themeLocalStorage;
-  });
+  const [theme, setTheme] = useLocalStorage("theme", "dark");
 
   const handleDarkMode = () => {
     setTheme(theme === "dark" ? "light " : "dark");
   };
-  console.log(theme);
-
-  useEffect(() => {
-    try {
-      localStorage.setItem("theme", theme);
-    } catch (e) {
-      console.log(e.massage);
-    }
-  }, [theme]);
 
   return (
     <div

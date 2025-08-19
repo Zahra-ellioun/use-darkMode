@@ -4,6 +4,7 @@ const useLocalStorage = (key, defaultValue) => {
   const [value, setValue] = useState(() => {
     let currentValue;
     try {
+      //local storage faghat reshte ghabol mikone b hamin khater injor minevisim
       currentValue = JSON.parse(
         localStorage.getItem(key) || String(defaultValue)
       );
@@ -16,7 +17,7 @@ const useLocalStorage = (key, defaultValue) => {
 
   useEffect(() => {
     localStorage.setItem(key, JSON.stringify(value));
-  }, [key, defaultValue]);
+  }, [key, value]);
 
   return [value, setValue];
 };
